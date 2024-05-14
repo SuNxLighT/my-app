@@ -1,0 +1,15 @@
+<div style="display: flex; flex-direction: column; row-gap: 0.5em;">
+    <div>
+        <input type="text" [(ngModel)]="employeeCode" required 
+        #employeeCodeNgModel="ngModel" 
+        pInputText placeholder="รหัส" />
+            <p-messages *ngIf="employeeCodeNgModel.invalid" severity="error" text="Field is required" />
+       
+    </div>
+    <div>
+        <input type="text" [(ngModel)] ="employeeName" pInputText placeholder="ชื่อ" />
+    </div>
+    <div>
+        <p-button [disabled]="employeeCodeNgModel.invalid" label="บันทึก"></p-button>
+    </div>
+</div>
